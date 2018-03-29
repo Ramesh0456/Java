@@ -1,4 +1,4 @@
-package rakesh;
+package ram;
 
 import java.util.Scanner;
 
@@ -25,4 +25,3 @@ public class Prime
 				System.out.println("prime");
 	}	
 }
-
