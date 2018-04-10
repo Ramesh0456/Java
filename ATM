@@ -1,0 +1,102 @@
+package ATM;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+public class Demo {
+	static void withdrawal(int i){
+		System.out.println("Your amount is"+" "+i);
+		System.out.println("Enter required amount to withdraw");
+		Scanner m=new Scanner(System.in);
+		int amount=m.nextInt();
+		float count;
+		if(amount<i){
+			count=i-amount;
+			System.out.println("Remaining balance"+" "+count );
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+			Date date=new Date();
+			System.out.println(dateFormat.format(date)); //2013/10/15 16:16:39
+		}else System.out.println("You have sufficient amount");
+	}
+	static void deposit(float j){
+		System.out.println("Your current amount"+" "+j);
+		System.out.println("Enter deposit amount");
+		Scanner d=new Scanner(System.in);
+		int deposit=d.nextInt();
+		float temp;
+		temp=deposit+j;
+		System.out.println("Your current amount"+" "+temp);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date=new Date();
+		System.out.println(dateFormat.format(date)); //2013/10/15 16:16:39
+	}
+	static void balEnquiry(double k){
+		System.out.println("Available bal is"+" "+k);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date=new Date();
+		System.out.println(dateFormat.format(date)); //2013/10/15 16:16:39
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Insert your ATM card");
+		System.out.println("ఈన్సెర్త్ యౌర్ ఆటం చర్ద్");
+		System.out.println("Select your language");	
+		
+		System.out.println("1 For english");
+		System.out.println("2 For తెలుగు");
+		while(true){
+		Scanner sc=new Scanner(System.in);
+		int lan=sc.nextInt();
+		if(lan==1 || lan==2 ){
+		if(lan==1){	
+			System.out.println("Enter pin num");
+			//Scanner p=new Scanner(System.in);
+			int pinnum=sc.nextInt();
+			int pin=1234;
+			if(pin==pinnum){
+			System.out.println("Select your required service");
+			System.out.println("1 For Withdrawal");
+			System.out.println("2 For Deposit");
+			System.out.println("3 For bal Enquiry");
+			//Scanner ss=new Scanner(System.in);
+			int service=sc.nextInt();
+			if(service==1){
+				withdrawal(60000);
+			}
+			if(service==2){
+				deposit(15000);		
+			}
+			if(service==3){
+				balEnquiry(50000);
+			}	
+		}	
+		 else System.out.println("You have entered Invalid pin number");
+		}
+			if(lan==2){	
+			System.out.println("Enter pin num");
+			//Scanner p=new Scanner(System.in);
+			int pinnum=sc.nextInt();
+			int pin=1234;
+			if(pin==pinnum){
+			System.out.println("Select your required service");
+			System.out.println("1 For Withdrawal");
+			System.out.println("2 For Deposit");
+			System.out.println("3 For bal Enquiry");
+			//Scanner ss=new Scanner(System.in);
+			int service=sc.nextInt();
+			if(service==1){
+				withdrawal(60000);
+			}
+			if(service==2){
+				deposit(15000);		
+			}
+			if(service==3){
+				balEnquiry(50000);
+			}	
+		}	
+		 else System.out.println("You have entered Invalid pin number");
+			}
+		}else System.out.println("You have entered invalid input");
+		}
+	}
+}
